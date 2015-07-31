@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "OTP Auto Fill",
+  "description": "This extension Fills Auto Fills of Axis Bank when text is copied",
+  "version": "1.0",
+  "icons":{
+    "16":"icon.png",
+    "48":"icon.png",
+    "128":"icon.png"
+    },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.axisbank.co.in/*","https://mightytext.net/web8*"],
+      "js": ["jquery.js","mycontentscript.js"]
+    }
+  ],
+  "permissions": [
+    "activeTab","tabs","contextMenus",
+    "https://ajax.googleapis.com/"
+  ]
+}
